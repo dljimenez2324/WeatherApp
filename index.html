@@ -20,11 +20,11 @@
                 <h3 class="highLow" id="lo">lo:</h3>
             </div>
             <div div class="col">
-                <center><img src="assets/cloudy.png" class="currentTemp"></center>
+                <img src="assets/cloudy.png" class="currentTemp">
             </div>
             <div class="col" style="margin-left:-250px;">
              <!--   <h3 class="highLow">3:13 p.m.</h3> -->
-                <h3 class="highLow" id="city">Stockton, CA</h3>
+                <h3 class="highLow" id="city">City Appears here</h3>
             </div>
         </div>
         
@@ -33,28 +33,28 @@
                 <div class="row">
                     <div class="col-sm" id="customCard">
                         <h5 class="weekDay" id="day1">Monday</h5>
-                        <center><img src="assets/sun.png.crdownload"  id="weatherIcon"></center>
-                        <h5 class="cardTemp">67°</h5>
+                        <img src="assets/sun.png.crdownload"  id="weatherIcon">
+                        <h5 class="cardTemp" id="firstCardTemp"></h5>
                     </div>
                     <div class="col-sm" id="customCard">
                         <h5 class="weekDay" id="day2">Tuesday</h5>
-                        <center><img src="assets/sun.png.crdownload" id="weatherIcon"></center>
-                        <h5 class="cardTemp">67°</h5>
+                        <img src="assets/sun.png.crdownload" id="weatherIcon">
+                        <h5 class="cardTemp" id="secondCardTemp">67°</h5>
                     </div>
                     <div class="col-sm" id="customCard">
                         <h5 class="weekDay" id="day3">Wednesday</h5>
-                        <center><img src="assets/sun.png.crdownload" id="weatherIcon"></center>
-                        <h5 class="cardTemp">67°</h5>
+                        <img src="assets/sun.png.crdownload" id="weatherIcon">
+                        <h5 class="cardTemp" id="thirdCardTemp">67°</h5>
                     </div>
                     <div class="col-sm" id="customCard">
                         <h5 class="weekDay" id="day4">Thursday°</h5>
-                        <center><img src="assets/sun.png.crdownload"  id="weatherIcon"></center>
-                        <h5 class="cardTemp">67°</h5>
+                        <img src="assets/sun.png.crdownload"  id="weatherIcon">
+                        <h5 class="cardTemp" id="fourthCardTemp">67°</h5>
                     </div>
                     <div class="col-sm" id="customCard">
                         <h5 class="weekDay" id="day5">Friday</h5>
-                        <center><img src="assets/sun.png.crdownload"    id="weatherIcon"></center>
-                        <h5 class="cardTemp">67°</h5>
+                        <img src="assets/sun.png.crdownload"    id="weatherIcon">
+                        <h5 class="cardTemp" id="fifthCardTemp">67°</h5>
                     </div>
 
                 </div>
@@ -67,13 +67,37 @@
                     </div>
                     <input type="text" placeholder="search..." id="searchBar">
 
+                    
+                    
                 </div>
-
             </div>
+        
 
+                <!-- Favorites List -->
+   <!-- <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3>Favorites</h3>
+            </div>
+        </div>
     </div>
+    <div id="injectHere"></div>
+    </div>-->
     
 
+    <button id="saveBtn">Save Locally</button>
+    <button id="deleteBtn">Remove from Favorites</button>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h3>Favorites</h3>
+            </div>
+        </div>
+        <div id="favorites">
+            <!-- Favorites will be injected here -->
+          
+        </div>
+    </div>
 
 
 
