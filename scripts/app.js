@@ -88,9 +88,9 @@ deleteBtn.addEventListener("click", function(){
 async function getCity(cityOfChoice){
     let apiResponse = await fetch("https://api.openweathermap.org/data/2.5/weather?q="+cityOfChoice+"&appid=090ba3b4cceb537314a314c7996068af&units=imperial").then(Response => Response.json());
     city.innerText = apiResponse.name;
-    hi.innerText = "hi: " + apiResponse.main.temp_max + " °F";
-    lo.innerText = "lo: " + apiResponse.main.temp_min + " °F";
-    todayTemp.innerText = apiResponse.main.temp +"°F";
+    hi.innerText = "hi: " + Math.floor(apiResponse.main.temp_max) + " °F";
+    lo.innerText = "lo: " + Math.floor(apiResponse.main.temp_min) + " °F";
+    todayTemp.innerText = Math.floor(apiResponse.main.temp) +"°F";
     console.log(apiResponse);
     fiveDayForecast(apiResponse.name);
     faveCityAPI = apiResponse;
@@ -103,11 +103,11 @@ async function fiveDayForecast(dailyCity){
     let apiResponse = await fetch("https://api.openweathermap.org/data/2.5/forecast?q="+dailyCity+"&appid=090ba3b4cceb537314a314c7996068af&units=imperial").then(Response => Response.json());
     
     console.log("Im in the fiveDayForecast Function");
-    firstCardTemp.innerText = apiResponse.list["6"].main.temp;
-    secondCardTemp.innerText = apiResponse.list["12"].main.temp;
-    thirdCardTemp.innerText = apiResponse.list["18"].main.temp;
-    fourthCardTemp.innerText = apiResponse.list["24"].main.temp;
-    fifthCardTemp.innerText = apiResponse.list["30"].main.temp;
+    firstCardTemp.innerText = Math.floor(apiResponse.list["6"].main.temp);
+    secondCardTemp.innerText = Math.floor(apiResponse.list["12"].main.temp);
+    thirdCardTemp.innerText = Math.floor(apiResponse.list["18"].main.temp);
+    fourthCardTemp.innerText = Math.floor(apiResponse.list["24"].main.temp);
+    fifthCardTemp.innerText = Math.floor(apiResponse.list["30"].main.temp);
     weatherIcon1.src = "https://openweathermap.org/img/wn/" + apiResponse.list["6"].weather["0"].icon + ".png";
     weatherIcon2.src = "https://openweathermap.org/img/wn/" + apiResponse.list["12"].weather["0"].icon + ".png";
     weatherIcon3.src = "https://openweathermap.org/img/wn/" + apiResponse.list["18"].weather["0"].icon + ".png";
