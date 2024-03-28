@@ -16,6 +16,11 @@ let secondCardTemp = document.getElementById("secondCardTemp");
 let thirdCardTemp = document.getElementById("thirdCardTemp");
 let fourthCardTemp = document.getElementById("fourthCardTemp");
 let fifthCardTemp = document.getElementById("fifthCardTemp");
+let weatherIcon1 = document.getElementById("weatherIcon1");
+let weatherIcon2 = document.getElementById("weatherIcon2");
+let weatherIcon3 = document.getElementById("weatherIcon3");
+let weatherIcon4 = document.getElementById("weatherIcon4");
+let weatherIcon5 = document.getElementById("weatherIcon5");
 
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday","Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
 let d = new Date();
@@ -89,6 +94,7 @@ async function getCity(cityOfChoice){
     console.log(apiResponse);
     fiveDayForecast(apiResponse.name);
     faveCityAPI = apiResponse;
+    currentTempIcon.src = "https://openweathermap.org/img/wn/" + apiResponse.weather["0"].icon +  ".png"
 };
 
 
@@ -102,6 +108,12 @@ async function fiveDayForecast(dailyCity){
     thirdCardTemp.innerText = apiResponse.list["18"].main.temp;
     fourthCardTemp.innerText = apiResponse.list["24"].main.temp;
     fifthCardTemp.innerText = apiResponse.list["30"].main.temp;
+    weatherIcon1.src = "https://openweathermap.org/img/wn/" + apiResponse.list["6"].weather["0"].icon + ".png";
+    weatherIcon2.src = "https://openweathermap.org/img/wn/" + apiResponse.list["12"].weather["0"].icon + ".png";
+    weatherIcon3.src = "https://openweathermap.org/img/wn/" + apiResponse.list["18"].weather["0"].icon + ".png";
+    weatherIcon4.src = "https://openweathermap.org/img/wn/" + apiResponse.list["24"].weather["0"].icon + ".png";
+    weatherIcon5.src = "https://openweathermap.org/img/wn/" + apiResponse.list["30"].weather["0"].icon + ".png";
+
 
     console.log(apiResponse);
     console.log(firstCardTemp);
